@@ -34,5 +34,3 @@ def listar(conn):
     cursor = conn.execute("SELECT id, nome FROM classes ORDER BY id")
     return cursor.fetchall()
 
-
-aa

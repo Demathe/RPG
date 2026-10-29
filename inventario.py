@@ -46,5 +46,5 @@ def buscar_por_nome(conn, nome_personagem):
 
 def listar(conn):
     """Devolve uma LISTA com todo o inventário."""
-    # TODO
-    raise NotImplementedError
+    conn.execute("SELECT iten_id, quantidade FROM inventario ORDER BY id") 
+    

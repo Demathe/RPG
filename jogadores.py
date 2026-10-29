@@ -10,14 +10,14 @@ Apague a linha "raise NotImplementedError" quando escrever o código.
 
 def incluir(conn, nome, apelido):
     """Insere um jogador e devolve o id gerado."""
-    # TODO: INSERT INTO jogadores (nome, apelido) VALUES (?, ?)
-    raise NotImplementedError
+    cursor = conn.execute("INSERT INTO jogadores (nome, apelido) VALUES (?)", (nome,apelido,))
+    conn.commit()
+    return cursor.lastrowid
 
 
 def buscar_por_id(conn, id):
     """Devolve UMA linha (id, nome, apelido), ou None."""
-    # TODO
-    raise NotImplementedError
+    conn.execute("SELECT * FROM jogadores WHERE id = ?", (id,))
 
 
 def buscar_por_nome(conn, nome):
